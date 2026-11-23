@@ -1,0 +1,8 @@
+parameter,label,low,high,low_npv,high_npv,option_id
+value_per_productive_hour,Value per productive hour,250.0,2500.0,-2515948.7762387116,10867981.260936497,pulse
+value_realization,Commercial value realization,0.1,0.8,-2303505.4423152953,9593321.257396001,pulse
+demand_hours_per_day,Demand hours per day,8.0,22.0,245814.56476569548,4494681.243234014,pulse
+rollout_months,Deployment delay (months),3.0,18.0,2624388.036718957,-625240.2231322937,pulse
+discount_rate,Annual discount rate,0.05,0.25,2296892.3929670583,1467912.8499295767,pulse
+monetizable_overlap,Saved time in usable windows,0.0,1.0,1945361.2361530242,1945361.2361530242,pulse
+scale_realization,AI pilot transfer fraction,0.3,1.0,1945361.2361530242,1945361.2361530242,pulse

@@ -1,0 +1,5 @@
+id,label,available_hours_day,booked_hours_day,recovered_hours_day,usable_recovered_hours_day,useful_hours_year,incremental_useful_hours_year,value_hours_year,annual_benefit_usd,upfront_benefit_usd,customer_npv_usd,gross_value_pv_usd,contract_fee_pv_usd,break_even_value_per_hour_usd,price_ceiling_usd,price_ceiling_feasible
+baseline,Keep current system,16.0,11.2,0.0,0.0,4087.9999999999995,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,True
+calibration,AI calibration,16.37470588235294,11.2,1.4988235294117647,0.37470588235294117,4087.9999999999995,0.0,0.0,0.0,0.0,-4003052.113702623,0.0,4003052.113702623,,0.0,True
+pulse,Pulse optimization,16.0,11.2,0.0,0.0,12779.543047243944,8691.543047243944,8691.543047243944,3042040.06653538,0.0,1945361.2361530242,5948413.349855647,4003052.113702623,672.9613223330834,7429847.502476882,True
+control,Lower-cost controls,16.0,11.2,0.0,0.0,4087.9999999999995,0.0,0.0,0.0,-450000.0,-4453052.113702623,-450000.0,4003052.113702623,,0.0,False

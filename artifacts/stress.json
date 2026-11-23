@@ -1,0 +1,1899 @@
+{
+  "kind": "stress_envelope",
+  "scenario": {
+    "calibration_hours": 8.0,
+    "booking_utilization": 0.7,
+    "already_automated": 0.35,
+    "ai_speed_claim": 0.7,
+    "ai_speed_interpretation": "rate_increase",
+    "scale_realization": 0.7,
+    "monetizable_overlap": 0.25,
+    "demand_hours_per_day": 11.2,
+    "value_per_productive_hour": 1000.0,
+    "value_realization": 0.35,
+    "value_mode": "additional_output",
+    "operating_days": 365,
+    "discount_rate": 0.12,
+    "contract_years": 3,
+    "contract_total": 5000000.0,
+    "rollout_months": 6.0,
+    "replacement_due": false,
+    "control_cost": 2000000.0,
+    "control_saving": 0.3,
+    "control_engineers": 3,
+    "control_integration_months": 6.0,
+    "engineer_annual_cost": 300000.0,
+    "n_qubits": 20,
+    "layers": 20,
+    "shots": 8192,
+    "seed": 7,
+    "baseline_gate_error": 0.01,
+    "pulse_gate_error": 0.005,
+    "baseline_gate_ns": 300.0,
+    "pulse_duration_increase": 0.4,
+    "fixed_overhead_us": 100.0,
+    "t1_us": 120.0,
+    "t2_us": 120.0,
+    "noise_mode": "reported_total",
+    "readout_error": 0.0
+  },
+  "ranges": {
+    "value_per_productive_hour": [
+      250.0,
+      2000.0
+    ],
+    "value_realization": [
+      0.1,
+      0.75
+    ],
+    "contract_total": [
+      3000000.0,
+      7000000.0
+    ]
+  },
+  "grid_points": 5,
+  "axes": {
+    "value": [
+      250.0,
+      687.5,
+      1125.0,
+      1562.5,
+      2000.0
+    ],
+    "realization": [
+      0.1,
+      0.2625,
+      0.42500000000000004,
+      0.5875,
+      0.75
+    ],
+    "contract": [
+      3000000.0,
+      4000000.0,
+      5000000.0,
+      6000000.0,
+      7000000.0
+    ]
+  },
+  "cell_count": 125,
+  "base_inside_ranges": true,
+  "options": [
+    {
+      "id": "baseline",
+      "label": "Keep current system",
+      "worst_npv_usd": 0.0,
+      "base_npv_usd": 0.0,
+      "best_npv_usd": 0.0,
+      "win_count": 46,
+      "win_coverage": 0.368,
+      "positive_npv_count": 0,
+      "positive_npv_coverage": 0.0,
+      "max_regret_usd": 23091368.802588344,
+      "always_nonnegative": true,
+      "dominated_by": []
+    },
+    {
+      "id": "calibration",
+      "label": "AI calibration",
+      "worst_npv_usd": -5604272.959183672,
+      "base_npv_usd": -4003052.113702623,
+      "best_npv_usd": -2401831.268221574,
+      "win_count": 0,
+      "win_coverage": 0.0,
+      "positive_npv_count": 0,
+      "positive_npv_coverage": 0.0,
+      "max_regret_usd": 25493200.070809923,
+      "always_nonnegative": false,
+      "dominated_by": [
+        "baseline",
+        "pulse"
+      ]
+    },
+    {
+      "id": "pulse",
+      "label": "Pulse optimization",
+      "worst_npv_usd": -5179386.29133684,
+      "base_npv_usd": 1945361.2361530242,
+      "best_npv_usd": 23091368.802588344,
+      "win_count": 79,
+      "win_coverage": 0.632,
+      "positive_npv_count": 79,
+      "positive_npv_coverage": 0.632,
+      "max_regret_usd": 5179386.29133684,
+      "always_nonnegative": false,
+      "dominated_by": []
+    },
+    {
+      "id": "control",
+      "label": "Lower-cost controls",
+      "worst_npv_usd": -6054272.959183672,
+      "base_npv_usd": -4453052.113702623,
+      "best_npv_usd": -2851831.268221574,
+      "win_count": 0,
+      "win_coverage": 0.0,
+      "positive_npv_count": 0,
+      "positive_npv_coverage": 0.0,
+      "max_regret_usd": 25943200.070809923,
+      "always_nonnegative": false,
+      "dominated_by": [
+        "baseline",
+        "calibration",
+        "pulse"
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.1,
+      "contract_total": 3000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": -1976944.600374742,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.1,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -2777555.0231152666,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.1,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -3578165.445855791,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.1,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -4378775.868596315,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.1,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -5179386.29133684,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.2625,
+      "contract_total": 3000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": -1286503.76512364,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.2625,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -2087114.1878641646,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.2625,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -2887724.6106046895,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.2625,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -3688335.033345214,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.2625,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -4488945.456085739,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 3000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": -596062.9298725377,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -1396673.3526130624,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -2197283.775353587,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -2997894.198094112,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -3798504.6208346365,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.5875,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 94377.9053785638,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 94377.9053785638,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.5875,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -706232.5173619608,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.5875,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -1506842.9401024855,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.5875,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -2307453.36284301,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.5875,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -3108063.7855835347,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.75,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 784818.740629666,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 784818.740629666,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.75,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -15791.682110858615,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.75,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -816402.1048513833,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.75,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -1617012.527591908,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 250.0,
+      "realization": 0.75,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -2417622.9503324325,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.1,
+      "contract_total": 3000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": -1233392.931642786,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.1,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -2034003.3543833105,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.1,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -2834613.777123835,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.1,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -3635224.1998643596,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.1,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -4435834.622604884,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.2625,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 665319.3652977445,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 665319.3652977445,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.2625,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -135291.05744278012,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.2625,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -935901.4801833048,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.2625,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -1736511.9029238294,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.2625,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -2537122.325664354,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2564031.6622382756,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 2564031.6622382756,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 1763421.239497751,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 1763421.239497751,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 962810.8167572264,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 962810.8167572264,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 162200.39401670173,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 162200.39401670173,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -638410.0287238229,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.5875,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4462743.959178805,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 4462743.959178805,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.5875,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 3662133.5364382807,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 3662133.5364382807,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.5875,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2861523.113697756,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 2861523.113697756,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.5875,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2060912.6909572314,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 2060912.6909572314,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.5875,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 1260302.2682167068,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 1260302.2682167068,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.75,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 6361456.256119337,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 6361456.256119337,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.75,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 5560845.833378812,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 5560845.833378812,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.75,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4760235.410638288,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 4760235.410638288,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.75,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 3959624.987897763,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 3959624.987897763,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 687.5,
+      "realization": 0.75,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 3159014.5651572384,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 3159014.5651572384,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.1,
+      "contract_total": 3000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": -489841.2629108296,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.1,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -1290451.6856513543,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.1,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -2091062.108391879,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.1,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -2891672.5311324038,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.1,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -3692282.9538729284,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.2625,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2617142.49571913,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 2617142.49571913,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.2625,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 1816532.0729786055,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 1816532.0729786055,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.2625,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 1015921.6502380809,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 1015921.6502380809,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.2625,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 215311.22749755625,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 215311.22749755625,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.2625,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -585299.1952429684,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 5724126.254349089,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 5724126.254349089,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4923515.831608565,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 4923515.831608565,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4122905.40886804,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 4122905.40886804,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 3322294.9861275153,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 3322294.9861275153,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2521684.5633869907,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 2521684.5633869907,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.5875,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 8831110.012979047,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 8831110.012979047,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.5875,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 8030499.590238523,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 8030499.590238523,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.5875,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 7229889.167497998,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 7229889.167497998,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.5875,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 6429278.7447574735,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 6429278.7447574735,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.5875,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 5628668.322016949,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 5628668.322016949,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.75,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 11938093.771609006,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 11938093.771609006,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.75,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 11137483.348868482,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 11137483.348868482,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.75,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 10336872.926127957,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 10336872.926127957,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.75,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 9536262.503387433,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 9536262.503387433,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1125.0,
+      "realization": 0.75,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 8735652.080646908,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 8735652.080646908,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.1,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 253710.40582112642,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 253710.40582112642,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.1,
+      "contract_total": 4000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": -546900.0169193982,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.1,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -1347510.4396599228,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.1,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -2148120.8624004475,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.1,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -2948731.285140972,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.2625,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4568965.626140514,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 4568965.626140514,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.2625,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 3768355.2033999898,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 3768355.2033999898,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.2625,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2967744.780659465,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 2967744.780659465,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.2625,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 2167134.3579189405,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 2167134.3579189405,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.2625,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 1366523.9351784158,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 1366523.9351784158,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 8884220.846459905,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 8884220.846459905,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 8083610.42371938,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 8083610.42371938,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 7283000.000978855,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 7283000.000978855,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 6482389.578238331,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 6482389.578238331,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.42500000000000004,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 5681779.155497806,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 5681779.155497806,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.5875,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 13199476.066779291,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 13199476.066779291,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.5875,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 12398865.644038767,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 12398865.644038767,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.5875,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 11598255.221298242,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 11598255.221298242,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.5875,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 10797644.798557717,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 10797644.798557717,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.5875,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 9997034.375817193,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 9997034.375817193,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.75,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 17514731.287098676,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 17514731.287098676,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.75,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 16714120.864358153,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 16714120.864358153,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.75,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 15913510.441617629,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 15913510.441617629,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.75,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 15112900.018877104,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 15112900.018877104,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 1562.5,
+      "realization": 0.75,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 14312289.59613658,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 14312289.59613658,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.1,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 997262.0745530822,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 997262.0745530822,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.1,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 196651.6518125576,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 196651.6518125576,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.1,
+      "contract_total": 5000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": -603958.770927967,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.1,
+      "contract_total": 6000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": -1404569.1936684917,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.1,
+      "contract_total": 7000000.0,
+      "winner": "baseline",
+      "best_npv_usd": 0.0,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": -2205179.6164090163,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.2625,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 6520788.756561898,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 6520788.756561898,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.2625,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 5720178.333821373,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 5720178.333821373,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.2625,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4919567.911080848,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 4919567.911080848,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.2625,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 4118957.488340324,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 4118957.488340324,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.2625,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 3318347.065599799,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 3318347.065599799,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 12044315.438570715,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 12044315.438570715,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 11243705.01583019,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 11243705.01583019,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 10443094.593089666,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 10443094.593089666,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 9642484.170349142,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 9642484.170349142,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.42500000000000004,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 8841873.747608617,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 8841873.747608617,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.5875,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 17567842.120579526,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 17567842.120579526,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.5875,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 16767231.697839003,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 16767231.697839003,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.5875,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 15966621.275098478,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 15966621.275098478,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.5875,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 15166010.852357954,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 15166010.852357954,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.5875,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 14365400.42961743,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 14365400.42961743,
+        "control": -6054272.959183672
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.75,
+      "contract_total": 3000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 23091368.802588344,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -2401831.268221574,
+        "pulse": 23091368.802588344,
+        "control": -2851831.268221574
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.75,
+      "contract_total": 4000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 22290758.37984782,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -3202441.6909620985,
+        "pulse": 22290758.37984782,
+        "control": -3652441.6909620985
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.75,
+      "contract_total": 5000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 21490147.957107298,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4003052.113702623,
+        "pulse": 21490147.957107298,
+        "control": -4453052.113702623
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.75,
+      "contract_total": 6000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 20689537.53436677,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -4803662.536443148,
+        "pulse": 20689537.53436677,
+        "control": -5253662.536443148
+      }
+    },
+    {
+      "value_per_hour": 2000.0,
+      "realization": 0.75,
+      "contract_total": 7000000.0,
+      "winner": "pulse",
+      "best_npv_usd": 19888927.111626245,
+      "npv_by_option": {
+        "baseline": 0.0,
+        "calibration": -5604272.959183672,
+        "pulse": 19888927.111626245,
+        "control": -6054272.959183672
+      }
+    }
+  ],
+  "recommendation": {
+    "maximin_option": "baseline",
+    "minimax_regret_option": "pulse",
+    "base_validation_priority": "pulse",
+    "summary": "Across 125 stated assumption combinations, keep current system protects the highest worst-case customer NPV; pulse optimization minimizes the largest forgone NPV. These are different decision rules, not probabilities of success."
+  },
+  "sampling_envelope": {
+    "available": true,
+    "ratio_low": 2.787280869984553,
+    "ratio_high": 3.5104737498582352,
+    "scope": "Propagation of the supplied throughput-ratio sampling interval through the same economic model. Conditional on this circuit, noise model and selected assumption ranges; not a confidence interval for commercial performance.",
+    "zero_bound_value_neutral": false,
+    "options": [
+      {
+        "id": "baseline",
+        "base_low_npv_usd": 0.0,
+        "base_high_npv_usd": 0.0,
+        "stress_low_npv_usd": 0.0,
+        "stress_high_npv_usd": 0.0
+      },
+      {
+        "id": "calibration",
+        "base_low_npv_usd": -4003052.113702623,
+        "base_high_npv_usd": -4003052.113702623,
+        "stress_low_npv_usd": -5604272.959183672,
+        "stress_high_npv_usd": -2401831.268221574
+      },
+      {
+        "id": "pulse",
+        "base_low_npv_usd": 997384.7506887568,
+        "base_high_npv_usd": 3020726.687212128,
+        "stress_low_npv_usd": -5247098.897441431,
+        "stress_high_npv_usd": 27700077.87855593
+      },
+      {
+        "id": "control",
+        "base_low_npv_usd": -4453052.113702623,
+        "base_high_npv_usd": -4453052.113702623,
+        "stress_low_npv_usd": -6054272.959183672,
+        "stress_high_npv_usd": -2851831.268221574
+      }
+    ]
+  },
+  "interpretation": "Win coverage is the fraction of these equally spaced grid cells in which an option has the highest customer NPV. It is NOT a probability, forecast or confidence level. No distribution over assumptions is asserted.",
+  "tie_rule": "Keep current system wins exact ties first, followed by calibration, pulse and controls.",
+  "warnings": [
+    "All case data are fictional. No new physics is simulated by this stress grid; it reuses the supplied matching benchmark.",
+    "Worst and best results are over the stated discrete assumption grid, not all possible hardware or business conditions.",
+    "Sampling bounds and assumption ranges have different meanings and are reported separately."
+  ],
+  "physical_fingerprint": "6152176dc522828b4040a8c6170a0a30f68f1b3f7c04110c472602498b1c723f",
+  "evidence": {
+    "experiment_id": "qy-bf831cab2db1",
+    "seed": 7,
+    "shots": 8192,
+    "source": "simulated",
+    "generated_at": "2026-11-22T10:50:33+00:00",
+    "model_version": "0.2.0",
+    "source_code_sha256": "fa2131f3fe08a1d21bf094ffd8ea31a40e2aca5e3c7a9068c801877a457d56f4",
+    "case_facts_sha256": "824b84f8be39c5f7f6de13878cf22b5fe41f5f6bc86aad1fd83a1d7da45ed745",
+    "physical_fingerprint": "6152176dc522828b4040a8c6170a0a30f68f1b3f7c04110c472602498b1c723f",
+    "scenario_sha256": "bf831cab2db1c993f67029addeabbb302baf9b0f136cd1d3809e779c72df9ca1",
+    "versions": {
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "pydantic": "2.14.4"
+    },
+    "backend": "NumPy Pauli-frame Clifford simulator",
+    "hardware_executed": false,
+    "uncertainty_scope": "Shot intervals are conditional on the selected circuit and noise model. Commercial ranges are assumptions, not calibrated probabilities."
+  },
+  "benchmark": {
+    "baseline": {
+      "p_success": 0.09423828125,
+      "successes": 772,
+      "shots": 8192,
+      "ci_low": 0.0881004398711578,
+      "ci_high": 0.10075649039008398,
+      "gate_count": 200,
+      "layers": 20,
+      "n_qubits": 20,
+      "seed": 7,
+      "gate_error": 0.01,
+      "effective_gate_error": 0.01,
+      "gate_duration_ns": 300.0,
+      "entangling_duration_us": 6.0,
+      "t1_us": 120.0,
+      "t2_us": 120.0,
+      "noise_mode": "reported_total",
+      "readout_error": 0.0,
+      "twirled_relaxation_infidelity": 0.0029934476440548253,
+      "metric": "all-zero return probability of the specified Clifford mirror",
+      "interval": "95% Wilson interval; shot noise conditional on this circuit",
+      "model": "Pauli-frame Monte Carlo on a ring-connected Clifford mirror"
+    },
+    "pulse": {
+      "p_success": 0.30126953125,
+      "successes": 2468,
+      "shots": 8192,
+      "ci_low": 0.2914291650287144,
+      "ci_high": 0.3112961907069359,
+      "gate_count": 200,
+      "layers": 20,
+      "n_qubits": 20,
+      "seed": 7,
+      "gate_error": 0.005,
+      "effective_gate_error": 0.005,
+      "gate_duration_ns": 420.0,
+      "entangling_duration_us": 8.4,
+      "t1_us": 120.0,
+      "t2_us": 120.0,
+      "noise_mode": "reported_total",
+      "readout_error": 0.0,
+      "twirled_relaxation_infidelity": 0.00418716532191974,
+      "metric": "all-zero return probability of the specified Clifford mirror",
+      "interval": "95% Wilson interval; shot noise conditional on this circuit",
+      "model": "Pauli-frame Monte Carlo on a ring-connected Clifford mirror"
+    },
+    "baseline_cycle_us": 106.0,
+    "pulse_cycle_us": 108.4,
+    "throughput_ratio": 3.1261113129266005,
+    "throughput_ratio_ci_low": 2.787280869984553,
+    "throughput_ratio_ci_high": 3.5104737498582352,
+    "ratio_interval_label": "Conservative 95% sampling bounds from simultaneous Clopper-Pearson intervals. Excludes model uncertainty.",
+    "duration_model": "Parallel entangling layers plus explicit reset/readout/scheduling/local-gate overhead per shot.",
+    "physical_fingerprint": "6152176dc522828b4040a8c6170a0a30f68f1b3f7c04110c472602498b1c723f"
+  }
+}

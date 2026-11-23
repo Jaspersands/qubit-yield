@@ -1,0 +1,6 @@
+[
+  {"name": "Base assumptions", "scenario": {}},
+  {"name": "Same output, less time", "scenario": {"value_mode": "fixed_output_savings"}},
+  {"name": "Low commercial value", "scenario": {"value_per_productive_hour": 300, "value_realization": 0.15}},
+  {"name": "Confirmed demand backlog", "scenario": {"demand_hours_per_day": 18}}
+]

@@ -1,0 +1,992 @@
+{
+  "benchmark": {
+    "baseline": {
+      "p_success": 0.09423828125,
+      "successes": 772,
+      "shots": 8192,
+      "ci_low": 0.0881004398711578,
+      "ci_high": 0.10075649039008398,
+      "gate_count": 200,
+      "layers": 20,
+      "n_qubits": 20,
+      "seed": 7,
+      "gate_error": 0.01,
+      "effective_gate_error": 0.01,
+      "gate_duration_ns": 300.0,
+      "entangling_duration_us": 6.0,
+      "t1_us": 120.0,
+      "t2_us": 120.0,
+      "noise_mode": "reported_total",
+      "readout_error": 0.0,
+      "twirled_relaxation_infidelity": 0.0029934476440548253,
+      "metric": "all-zero return probability of the specified Clifford mirror",
+      "interval": "95% Wilson interval; shot noise conditional on this circuit",
+      "model": "Pauli-frame Monte Carlo on a ring-connected Clifford mirror"
+    },
+    "pulse": {
+      "p_success": 0.30126953125,
+      "successes": 2468,
+      "shots": 8192,
+      "ci_low": 0.2914291650287144,
+      "ci_high": 0.3112961907069359,
+      "gate_count": 200,
+      "layers": 20,
+      "n_qubits": 20,
+      "seed": 7,
+      "gate_error": 0.005,
+      "effective_gate_error": 0.005,
+      "gate_duration_ns": 420.0,
+      "entangling_duration_us": 8.4,
+      "t1_us": 120.0,
+      "t2_us": 120.0,
+      "noise_mode": "reported_total",
+      "readout_error": 0.0,
+      "twirled_relaxation_infidelity": 0.00418716532191974,
+      "metric": "all-zero return probability of the specified Clifford mirror",
+      "interval": "95% Wilson interval; shot noise conditional on this circuit",
+      "model": "Pauli-frame Monte Carlo on a ring-connected Clifford mirror"
+    },
+    "baseline_cycle_us": 106.0,
+    "pulse_cycle_us": 108.4,
+    "throughput_ratio": 3.1261113129266005,
+    "throughput_ratio_ci_low": 2.787280869984553,
+    "throughput_ratio_ci_high": 3.5104737498582352,
+    "ratio_interval_label": "Conservative 95% sampling bounds from simultaneous Clopper-Pearson intervals. Excludes model uncertainty.",
+    "duration_model": "Parallel entangling layers plus explicit reset/readout/scheduling/local-gate overhead per shot.",
+    "physical_fingerprint": "6152176dc522828b4040a8c6170a0a30f68f1b3f7c04110c472602498b1c723f"
+  },
+  "options": [
+    {
+      "id": "baseline",
+      "label": "Keep current system",
+      "available_hours_day": 16.0,
+      "booked_hours_day": 11.2,
+      "recovered_hours_day": 0.0,
+      "usable_recovered_hours_day": 0.0,
+      "useful_hours_year": 4087.9999999999995,
+      "incremental_useful_hours_year": 0.0,
+      "value_hours_year": 0.0,
+      "annual_benefit_usd": 0.0,
+      "upfront_benefit_usd": 0.0,
+      "customer_npv_usd": 0.0,
+      "gross_value_pv_usd": 0.0,
+      "contract_fee_pv_usd": 0.0,
+      "break_even_value_per_hour_usd": null,
+      "price_ceiling_usd": 0.0,
+      "price_ceiling_feasible": true
+    },
+    {
+      "id": "calibration",
+      "label": "AI calibration",
+      "available_hours_day": 16.37470588235294,
+      "booked_hours_day": 11.2,
+      "recovered_hours_day": 1.4988235294117647,
+      "usable_recovered_hours_day": 0.37470588235294117,
+      "useful_hours_year": 4087.9999999999995,
+      "incremental_useful_hours_year": 0.0,
+      "value_hours_year": 0.0,
+      "annual_benefit_usd": 0.0,
+      "upfront_benefit_usd": 0.0,
+      "customer_npv_usd": -4003052.113702623,
+      "gross_value_pv_usd": 0.0,
+      "contract_fee_pv_usd": 4003052.113702623,
+      "break_even_value_per_hour_usd": null,
+      "price_ceiling_usd": 0.0,
+      "price_ceiling_feasible": true
+    },
+    {
+      "id": "pulse",
+      "label": "Pulse optimization",
+      "available_hours_day": 16.0,
+      "booked_hours_day": 11.2,
+      "recovered_hours_day": 0.0,
+      "usable_recovered_hours_day": 0.0,
+      "useful_hours_year": 12779.543047243944,
+      "incremental_useful_hours_year": 8691.543047243944,
+      "value_hours_year": 8691.543047243944,
+      "annual_benefit_usd": 3042040.06653538,
+      "upfront_benefit_usd": 0.0,
+      "customer_npv_usd": 1945361.2361530242,
+      "gross_value_pv_usd": 5948413.349855647,
+      "contract_fee_pv_usd": 4003052.113702623,
+      "break_even_value_per_hour_usd": 672.9613223330834,
+      "price_ceiling_usd": 7429847.502476882,
+      "price_ceiling_feasible": true
+    },
+    {
+      "id": "control",
+      "label": "Lower-cost controls",
+      "available_hours_day": 16.0,
+      "booked_hours_day": 11.2,
+      "recovered_hours_day": 0.0,
+      "usable_recovered_hours_day": 0.0,
+      "useful_hours_year": 4087.9999999999995,
+      "incremental_useful_hours_year": 0.0,
+      "value_hours_year": 0.0,
+      "annual_benefit_usd": 0.0,
+      "upfront_benefit_usd": -450000.0,
+      "customer_npv_usd": -4453052.113702623,
+      "gross_value_pv_usd": -450000.0,
+      "contract_fee_pv_usd": 4003052.113702623,
+      "break_even_value_per_hour_usd": null,
+      "price_ceiling_usd": 0.0,
+      "price_ceiling_feasible": false
+    }
+  ],
+  "schedule": {
+    "baseline": {
+      "calibration": 8.0,
+      "booked": 11.2,
+      "idle": 4.800000000000001
+    },
+    "calibration": {
+      "calibration": 6.501176470588235,
+      "booked": 11.2,
+      "idle": 6.2988235294117665
+    }
+  },
+  "cashflows": [
+    {
+      "year": 0,
+      "calibration": 0.0,
+      "pulse": 0.0,
+      "control": -450000.0
+    },
+    {
+      "year": 1,
+      "calibration": -1666666.6666666667,
+      "pulse": -145646.63339897664,
+      "control": -1666666.6666666667
+    },
+    {
+      "year": 2,
+      "calibration": -1666666.6666666667,
+      "pulse": 1375373.3998687135,
+      "control": -1666666.6666666667
+    },
+    {
+      "year": 3,
+      "calibration": -1666666.6666666667,
+      "pulse": 1375373.3998687135,
+      "control": -1666666.6666666667
+    }
+  ],
+  "financial_basis": {
+    "currency": "USD",
+    "basis": "incremental customer contribution or avoided cost, not vendor revenue",
+    "value_mode": "additional_output",
+    "value_quantity_definition": "additional useful benchmark output expressed in baseline-equivalent productive hours",
+    "fee_timing": "equal end-of-year installments",
+    "annual_contract_fee_usd": 1666666.6666666667,
+    "contract_fee_pv_usd": 4003052.113702623,
+    "fee_pv_factor": 0.8006104227405246,
+    "benefit_pv_factor": 1.9554026967930027,
+    "control_integration_cost_usd": 450000.0,
+    "control_hardware_quote_usd": 1400000.0,
+    "control_avoided_procurement_usd": 0.0,
+    "standalone_controls_net_usd": -1850000.0,
+    "control_contract_includes_hardware": true,
+    "calibration_time_reduction": 0.4117647058823529,
+    "unserved_demand_hours_day": 0.0,
+    "best_at_current_quote": "pulse",
+    "preferred_validation_target": "pulse",
+    "useful_hours_definition": "annual mirror-benchmark capacity expressed in hours at the baseline successful-shot rate; not wall-clock hours or guaranteed application utility"
+  },
+  "scenario": {
+    "calibration_hours": 8.0,
+    "booking_utilization": 0.7,
+    "already_automated": 0.35,
+    "ai_speed_claim": 0.7,
+    "ai_speed_interpretation": "rate_increase",
+    "scale_realization": 0.7,
+    "monetizable_overlap": 0.25,
+    "demand_hours_per_day": 11.2,
+    "value_per_productive_hour": 1000.0,
+    "value_realization": 0.35,
+    "value_mode": "additional_output",
+    "operating_days": 365,
+    "discount_rate": 0.12,
+    "contract_years": 3,
+    "contract_total": 5000000.0,
+    "rollout_months": 6.0,
+    "replacement_due": false,
+    "control_cost": 2000000.0,
+    "control_saving": 0.3,
+    "control_engineers": 3,
+    "control_integration_months": 6.0,
+    "engineer_annual_cost": 300000.0,
+    "n_qubits": 20,
+    "layers": 20,
+    "shots": 8192,
+    "seed": 7,
+    "baseline_gate_error": 0.01,
+    "pulse_gate_error": 0.005,
+    "baseline_gate_ns": 300.0,
+    "pulse_duration_increase": 0.4,
+    "fixed_overhead_us": 100.0,
+    "t1_us": 120.0,
+    "t2_us": 120.0,
+    "noise_mode": "reported_total",
+    "readout_error": 0.0
+  },
+  "recommendation": {
+    "id": "pulse",
+    "title": "Prioritize pulse optimization",
+    "summary": "Better gates increase simulated successful-shot throughput even after accounting for their longer duration. The price ceiling depends on the assumed application-value conversion and is a zero-NPV ceiling, not a recommended price or validated willingness to pay.",
+    "contract_verdict": "Conditional go after validation",
+    "price_ceiling_usd": 7429847.502476882,
+    "price_ceiling_basis": "maximum nonnegative total of equal annual installments; where gross value is positive it sets modeled customer NPV to zero. Zero may mean that no nonnegative fee can break even.",
+    "initial_hypothesis": "Prioritize AI calibration because eight hours of daily downtime appears to be the largest capacity opportunity.",
+    "survived": false,
+    "best_at_current_quote": "pulse",
+    "validation_gates": [
+      "Replay representative customer applications at matched wall-clock budgets, including reset, readout, leakage and drift.",
+      "Measure booked demand by time of day and identify which saved calibration windows could actually be sold or used.",
+      "Obtain an agreed dollar value for application outcomes before converting benchmark gains into a contract price."
+    ]
+  },
+  "assumptions": [
+    {
+      "key": "calibration_hours",
+      "label": "Daily calibration",
+      "value": 8.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 8.0,
+      "rationale": "Nominal processor unavailability, before any overnight or demand adjustment."
+    },
+    {
+      "key": "booking_utilization",
+      "label": "Observed bookings / available time",
+      "value": 0.7,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.7,
+      "rationale": "Case observation. Default demand is 0.70 x (24 - 8) = 11.2 hours/day; the explicit demand field controls a scenario."
+    },
+    {
+      "key": "already_automated",
+      "label": "Calibration tasks already automated",
+      "value": 0.35,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.35,
+      "rationale": "The case reports a fraction of tasks, not a time share. Treating it as a time share is an explicit approximation."
+    },
+    {
+      "key": "ai_speed_claim",
+      "label": "AI calibration speed claim",
+      "value": 0.7,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.7,
+      "rationale": "The wording is 70% faster. It does not unambiguously mean 70% less time."
+    },
+    {
+      "key": "baseline_gate_error",
+      "label": "Current two-qubit average gate infidelity",
+      "value": 0.01,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.01,
+      "rationale": "Interpreted as full reported gate error in reported_total mode; mapping to an independent depolarizing channel is a modeling assumption."
+    },
+    {
+      "key": "pulse_gate_error",
+      "label": "Proposed two-qubit average gate infidelity",
+      "value": 0.005,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.005,
+      "rationale": "A proposed improvement in the fictional case, not independently measured evidence."
+    },
+    {
+      "key": "baseline_gate_ns",
+      "label": "Current two-qubit duration (ns)",
+      "value": 300.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 300.0,
+      "rationale": "Disjoint two-qubit gates run in parallel within a layer."
+    },
+    {
+      "key": "pulse_duration_increase",
+      "label": "Pulse duration increase",
+      "value": 0.4,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.4,
+      "rationale": "420 ns at the case's 300 ns baseline."
+    },
+    {
+      "key": "t1_us",
+      "label": "Median T1 (us)",
+      "value": 120.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 120.0,
+      "rationale": "A median is not a device-wide distribution. Reported-total mode does not add this loss twice."
+    },
+    {
+      "key": "t2_us",
+      "label": "Median T2 (us)",
+      "value": 120.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 120.0,
+      "rationale": "Used for the alternate control-only noise interpretation, with T2 <= 2 T1."
+    },
+    {
+      "key": "n_qubits",
+      "label": "Representative workload qubits",
+      "value": 20,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 20,
+      "rationale": "The device has 100 qubits; the representative workload uses 20. The benchmark does not simulate the whole processor."
+    },
+    {
+      "key": "layers",
+      "label": "Entangling layers",
+      "value": 20,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 20,
+      "rationale": "Even mirror-circuit depth; at 20 qubits this yields 200 two-qubit gates."
+    },
+    {
+      "key": "contract_total",
+      "label": "Proposed total contract",
+      "value": 5000000.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 5000000.0,
+      "rationale": "Assumed to include the selected product and, for controls, the supplied hardware. Do not add the hardware quote to this fee."
+    },
+    {
+      "key": "contract_years",
+      "label": "Contract horizon (years)",
+      "value": 3,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 3,
+      "rationale": "No terminal value, renewal, or residual hardware value is assumed."
+    },
+    {
+      "key": "control_cost",
+      "label": "Conventional control procurement",
+      "value": 2000000.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 2000000.0,
+      "rationale": "Only avoidable when an equivalent new procurement was already required. Installed purchase costs are sunk."
+    },
+    {
+      "key": "control_saving",
+      "label": "Advertised hardware discount",
+      "value": 0.3,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 0.3,
+      "rationale": "Standalone hardware quote is $1.4M at the case inputs, separate from the target total-contract analysis."
+    },
+    {
+      "key": "control_engineers",
+      "label": "Customer engineers for integration",
+      "value": 3,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 3,
+      "rationale": "Customer cost; vendor engineering cost is not provided."
+    },
+    {
+      "key": "control_integration_months",
+      "label": "Control integration (months)",
+      "value": 6.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 6.0,
+      "rationale": "3 engineers x 6/12 year x $300K = $450K."
+    },
+    {
+      "key": "engineer_annual_cost",
+      "label": "Customer cost per engineer-year",
+      "value": 300000.0,
+      "kind": "case",
+      "source": "Lab-to-Market Hackathon, Challenge 04, p. 5 (fictional case)",
+      "original_value": 300000.0,
+      "rationale": "No extra, unsupported engineering salary assumptions are added."
+    },
+    {
+      "key": "ai_speed_interpretation",
+      "label": "Meaning of faster",
+      "value": "rate_increase",
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "rate_increase uses time / 1.7, a 41.18% reduction; time_reduction tests the alternative 70% reduction reading."
+    },
+    {
+      "key": "scale_realization",
+      "label": "10-to-100-qubit transfer",
+      "value": 0.7,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Assumed fraction of pilot time-saving that survives full-device deployment. This is not a success probability."
+    },
+    {
+      "key": "monetizable_overlap",
+      "label": "Freed time in usable windows",
+      "value": 0.25,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Assumed fraction of saved calibration time reachable by customer demand. The case only says most calibration runs overnight."
+    },
+    {
+      "key": "demand_hours_per_day",
+      "label": "Daily demand scenario",
+      "value": 11.2,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Fixed workload-hour demand; extra availability creates bookings only after the existing 16 hours are filled. No automatic demand growth is assumed."
+    },
+    {
+      "key": "fixed_overhead_us",
+      "label": "Reset, readout and host overhead per shot",
+      "value": 100.0,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Illustrative fixed time per shot. It dilutes the relative penalty of longer entangling gates. Local Clifford-gate time is omitted."
+    },
+    {
+      "key": "value_per_productive_hour",
+      "label": "Value per baseline-equivalent productive hour",
+      "value": 1000.0,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Illustrative marginal contribution or avoided cost, not a known rental price or vendor revenue."
+    },
+    {
+      "key": "value_realization",
+      "label": "Commercial value realization",
+      "value": 0.35,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Fraction of the selected extra-output or fixed-output saved-time quantity that translates into monetizable application benefit. Explicitly unvalidated, not a probability or margin estimate."
+    },
+    {
+      "key": "value_mode",
+      "label": "What creates financial value",
+      "value": "additional_output",
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "additional_output values B*(R-1), which needs demand for more useful output. fixed_output_savings values B*(1-1/R), the booked time avoided for the same benchmark output; only genuinely avoidable costs can be monetized. Calibration has no same-output speedup and earns zero capacity value in that mode."
+    },
+    {
+      "key": "operating_days",
+      "label": "Operating days per year",
+      "value": 365,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Assumed service calendar; maintenance and other fixed overhead are represented only to the extent captured by the case's booked time."
+    },
+    {
+      "key": "discount_rate",
+      "label": "Annual discount rate",
+      "value": 0.12,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Illustrative time-value/risk hurdle. It does not validate the business or replace uncertainty analysis."
+    },
+    {
+      "key": "rollout_months",
+      "label": "Delay before recurring benefits",
+      "value": 6.0,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Assumed deployment delay shared by capacity improvements. Fees remain payable at each year end; a delay beyond the horizon produces no recurring benefit."
+    },
+    {
+      "key": "replacement_due",
+      "label": "Equivalent new controls purchase required",
+      "value": false,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "False means the existing $2M system is sunk. True credits avoidable $2M procurement. Integration cost is conservatively recognized at time zero."
+    },
+    {
+      "key": "noise_mode",
+      "label": "Noise interpretation",
+      "value": "reported_total",
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "reported_total uses reported full gate infidelities without adding in-gate T1/T2 loss again; control_only treats the reported errors as control errors and adds Pauli-twirled relaxation."
+    },
+    {
+      "key": "readout_error",
+      "label": "Independent bit-readout error",
+      "value": 0.0,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Not supplied in the case. Zero isolates the proposed two-qubit-gate improvement; it is not a claim of perfect hardware readout."
+    },
+    {
+      "key": "shots",
+      "label": "Monte Carlo trajectories per circuit",
+      "value": 8192,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "A computational budget. Binomial intervals reflect sampling error within this assumed model, not uncertainty about real hardware."
+    },
+    {
+      "key": "seed",
+      "label": "Reproducibility seed",
+      "value": 7,
+      "kind": "assumption",
+      "source": "Explicit analyst assumption",
+      "rationale": "Reproduce the circuit and simulated error trajectories using the exported scenario and software version."
+    }
+  ],
+  "warnings": [
+    "All case inputs are fictional. The benchmark is simulated; no QPU, customer or vendor has validated these results.",
+    "Mirror-circuit success is a controlled benchmark, not application correctness. The dollar conversion requires customer validation.",
+    "The 35% already-automated task count is assumed to represent 35% of calibration time; a task-duration audit could change the result.",
+    "The 10-qubit AI pilot does not establish performance on the customer's 100-qubit processor.",
+    "The target contract includes the selected product. For controls it includes hardware, so the separate $1.4M hardware quote is not charged again.",
+    "Lower-cost controls are assumed to preserve current performance; that parity must be tested. Vendor delivery costs are unknown, so vendor profit is not estimated.",
+    "Baseline-equivalent productive hours can exceed wall-clock hours; they express benchmark throughput relative to the baseline.",
+    "Current demand fits inside existing availability. Faster calibration produces no additional booked hours in this fungible-demand model.",
+    "The installed $2M controls are treated as a sunk cost. A cheaper new control system does not create savings without a replacement need.",
+    "Reported gate error is interpreted as total average infidelity. Adding in-gate coherence decay again would double count it.",
+    "This scenario values additional useful output B*(R-1), not the smaller fixed-output saved-time quantity B*(1-1/R). Extra-output demand and willingness to pay must be established.",
+    "Mirror return is a benchmark proxy. A gain here does not establish customer application accuracy, billable demand, or quantum advantage."
+  ],
+  "sensitivities": [
+    {
+      "parameter": "value_per_productive_hour",
+      "label": "Value per productive hour",
+      "low": 250.0,
+      "high": 2500.0,
+      "low_npv": -2515948.7762387116,
+      "high_npv": 10867981.260936497,
+      "option_id": "pulse"
+    },
+    {
+      "parameter": "value_realization",
+      "label": "Commercial value realization",
+      "low": 0.1,
+      "high": 0.8,
+      "low_npv": -2303505.4423152953,
+      "high_npv": 9593321.257396001,
+      "option_id": "pulse"
+    },
+    {
+      "parameter": "demand_hours_per_day",
+      "label": "Demand hours per day",
+      "low": 8.0,
+      "high": 22.0,
+      "low_npv": 245814.56476569548,
+      "high_npv": 4494681.243234014,
+      "option_id": "pulse"
+    },
+    {
+      "parameter": "rollout_months",
+      "label": "Deployment delay (months)",
+      "low": 3.0,
+      "high": 18.0,
+      "low_npv": 2624388.036718957,
+      "high_npv": -625240.2231322937,
+      "option_id": "pulse"
+    },
+    {
+      "parameter": "discount_rate",
+      "label": "Annual discount rate",
+      "low": 0.05,
+      "high": 0.25,
+      "low_npv": 2296892.3929670583,
+      "high_npv": 1467912.8499295767,
+      "option_id": "pulse"
+    },
+    {
+      "parameter": "monetizable_overlap",
+      "label": "Saved time in usable windows",
+      "low": 0.0,
+      "high": 1.0,
+      "low_npv": 1945361.2361530242,
+      "high_npv": 1945361.2361530242,
+      "option_id": "pulse"
+    },
+    {
+      "parameter": "scale_realization",
+      "label": "AI pilot transfer fraction",
+      "low": 0.3,
+      "high": 1.0,
+      "low_npv": 1945361.2361530242,
+      "high_npv": 1945361.2361530242,
+      "option_id": "pulse"
+    }
+  ],
+  "heatmap": [
+    {
+      "value_per_hour": 0,
+      "realization": 0.1,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 0,
+      "realization": 0.25,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 0,
+      "realization": 0.35,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 0,
+      "realization": 0.5,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 0,
+      "realization": 0.75,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 0,
+      "realization": 1.0,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 250,
+      "realization": 0.1,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 250,
+      "realization": 0.25,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 250,
+      "realization": 0.35,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 250,
+      "realization": 0.5,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 250,
+      "realization": 0.75,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 250,
+      "realization": 1.0,
+      "winner": "pulse",
+      "npv": 245814.5647656964
+    },
+    {
+      "value_per_hour": 500,
+      "realization": 0.1,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 500,
+      "realization": 0.25,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 500,
+      "realization": 0.35,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 500,
+      "realization": 0.5,
+      "winner": "pulse",
+      "npv": 245814.5647656964
+    },
+    {
+      "value_per_hour": 500,
+      "realization": 0.75,
+      "winner": "pulse",
+      "npv": 2370247.9039998567
+    },
+    {
+      "value_per_hour": 500,
+      "realization": 1.0,
+      "winner": "pulse",
+      "npv": 4494681.243234016
+    },
+    {
+      "value_per_hour": 1000,
+      "realization": 0.1,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 1000,
+      "realization": 0.25,
+      "winner": "pulse",
+      "npv": 245814.5647656964
+    },
+    {
+      "value_per_hour": 1000,
+      "realization": 0.35,
+      "winner": "pulse",
+      "npv": 1945361.2361530242
+    },
+    {
+      "value_per_hour": 1000,
+      "realization": 0.5,
+      "winner": "pulse",
+      "npv": 4494681.243234016
+    },
+    {
+      "value_per_hour": 1000,
+      "realization": 0.75,
+      "winner": "pulse",
+      "npv": 8743547.921702337
+    },
+    {
+      "value_per_hour": 1000,
+      "realization": 1.0,
+      "winner": "pulse",
+      "npv": 12992414.600170655
+    },
+    {
+      "value_per_hour": 1500,
+      "realization": 0.1,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 1500,
+      "realization": 0.25,
+      "winner": "pulse",
+      "npv": 2370247.9039998567
+    },
+    {
+      "value_per_hour": 1500,
+      "realization": 0.35,
+      "winner": "pulse",
+      "npv": 4919567.911080848
+    },
+    {
+      "value_per_hour": 1500,
+      "realization": 0.5,
+      "winner": "pulse",
+      "npv": 8743547.921702337
+    },
+    {
+      "value_per_hour": 1500,
+      "realization": 0.75,
+      "winner": "pulse",
+      "npv": 15116847.939404817
+    },
+    {
+      "value_per_hour": 1500,
+      "realization": 1.0,
+      "winner": "pulse",
+      "npv": 21490147.957107298
+    },
+    {
+      "value_per_hour": 2000,
+      "realization": 0.1,
+      "winner": "baseline",
+      "npv": 0.0
+    },
+    {
+      "value_per_hour": 2000,
+      "realization": 0.25,
+      "winner": "pulse",
+      "npv": 4494681.243234016
+    },
+    {
+      "value_per_hour": 2000,
+      "realization": 0.35,
+      "winner": "pulse",
+      "npv": 7893774.586008672
+    },
+    {
+      "value_per_hour": 2000,
+      "realization": 0.5,
+      "winner": "pulse",
+      "npv": 12992414.600170655
+    },
+    {
+      "value_per_hour": 2000,
+      "realization": 0.75,
+      "winner": "pulse",
+      "npv": 21490147.957107298
+    },
+    {
+      "value_per_hour": 2000,
+      "realization": 1.0,
+      "winner": "pulse",
+      "npv": 29987881.31404393
+    },
+    {
+      "value_per_hour": 3000,
+      "realization": 0.1,
+      "winner": "pulse",
+      "npv": 1095587.9004593613
+    },
+    {
+      "value_per_hour": 3000,
+      "realization": 0.25,
+      "winner": "pulse",
+      "npv": 8743547.921702337
+    },
+    {
+      "value_per_hour": 3000,
+      "realization": 0.35,
+      "winner": "pulse",
+      "npv": 13842187.93586432
+    },
+    {
+      "value_per_hour": 3000,
+      "realization": 0.5,
+      "winner": "pulse",
+      "npv": 21490147.957107298
+    },
+    {
+      "value_per_hour": 3000,
+      "realization": 0.75,
+      "winner": "pulse",
+      "npv": 34236747.992512256
+    },
+    {
+      "value_per_hour": 3000,
+      "realization": 1.0,
+      "winner": "pulse",
+      "npv": 46983348.027917214
+    }
+  ],
+  "depth_curve": [
+    {
+      "layers": 4,
+      "baseline": 0.665283203125,
+      "pulse": 0.8154296875,
+      "baseline_low": 0.6506828706582983,
+      "baseline_high": 0.6795738023374116,
+      "pulse_low": 0.8032553196025528,
+      "pulse_high": 0.8270129544158477,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 8,
+      "baseline": 0.416748046875,
+      "pulse": 0.64599609375,
+      "baseline_low": 0.4017344533694432,
+      "baseline_high": 0.4319176507789511,
+      "pulse_low": 0.6312205992091559,
+      "pulse_high": 0.6604979982080296,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 12,
+      "baseline": 0.26025390625,
+      "pulse": 0.49853515625,
+      "baseline_low": 0.2470457826512303,
+      "baseline_high": 0.27391130319546536,
+      "pulse_low": 0.48323155104961774,
+      "pulse_high": 0.5138415065013804,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 16,
+      "baseline": 0.156494140625,
+      "pulse": 0.3857421875,
+      "baseline_low": 0.14568998780190867,
+      "baseline_high": 0.1679420079071552,
+      "pulse_low": 0.3709487842385699,
+      "pulse_high": 0.40074970473928506,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 20,
+      "baseline": 0.095458984375,
+      "pulse": 0.297607421875,
+      "baseline_low": 0.08683533846437357,
+      "baseline_high": 0.10484072186961281,
+      "pulse_low": 0.28380066184306496,
+      "pulse_high": 0.31179345645317813,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 28,
+      "baseline": 0.03515625,
+      "pulse": 0.175537109375,
+      "baseline_low": 0.029937397528601,
+      "baseline_high": 0.041246198654808816,
+      "pulse_low": 0.16419228751294787,
+      "pulse_high": 0.18748996003314014,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 40,
+      "baseline": 0.009521484375,
+      "pulse": 0.088623046875,
+      "baseline_low": 0.006973116704285116,
+      "baseline_high": 0.012988986621592162,
+      "pulse_low": 0.0803006103898273,
+      "pulse_high": 0.0977163851821504,
+      "shots": 4096,
+      "seed": 7
+    },
+    {
+      "layers": 60,
+      "baseline": 0.00048828125,
+      "pulse": 0.025146484375,
+      "baseline_low": 0.00013391454481334652,
+      "baseline_high": 0.0017787103455524616,
+      "pulse_low": 0.020778184389122753,
+      "pulse_high": 0.03040463839277436,
+      "shots": 4096,
+      "seed": 7
+    }
+  ],
+  "evidence": {
+    "experiment_id": "qy-bf831cab2db1",
+    "seed": 7,
+    "shots": 8192,
+    "source": "simulated",
+    "generated_at": "2026-11-22T10:50:33+00:00",
+    "model_version": "0.2.0",
+    "source_code_sha256": "fa2131f3fe08a1d21bf094ffd8ea31a40e2aca5e3c7a9068c801877a457d56f4",
+    "case_facts_sha256": "824b84f8be39c5f7f6de13878cf22b5fe41f5f6bc86aad1fd83a1d7da45ed745",
+    "physical_fingerprint": "6152176dc522828b4040a8c6170a0a30f68f1b3f7c04110c472602498b1c723f",
+    "scenario_sha256": "bf831cab2db1c993f67029addeabbb302baf9b0f136cd1d3809e779c72df9ca1",
+    "versions": {
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "pydantic": "2.14.4"
+    },
+    "backend": "NumPy Pauli-frame Clifford simulator",
+    "hardware_executed": false,
+    "uncertainty_scope": "Shot intervals are conditional on the selected circuit and noise model. Commercial ranges are assumptions, not calibrated probabilities."
+  }
+}

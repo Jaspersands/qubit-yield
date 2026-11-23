@@ -1,0 +1,18 @@
+.saved-scenario-explorer{margin:0 0 22px;padding:23px 25px;border:1px solid #dbe4ca;border-radius:11px;background:linear-gradient(120deg,#f2f6e7,#fbfcf5)}
+.saved-scenario-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}
+.saved-scenario-heading .eyebrow{color:#7c925f;font-size:8px}
+.saved-scenario-heading h2{font-family:'Manrope',sans-serif;font-size:19px;letter-spacing:-.5px;font-weight:600;color:#446036;margin-top:6px}
+.saved-source-pill{display:flex;align-items:center;gap:6px;border:1px solid #d7e1c4;border-radius:5px;background:#f6f9ed;padding:7px 9px;color:#7e9463;font-size:9px;white-space:nowrap}
+.saved-scenario-body{display:grid;grid-template-columns:minmax(230px,300px) minmax(0,1fr);gap:25px;align-items:center}
+.saved-scenario-picker label{font-size:10px;color:#748961;font-weight:500;display:block;margin-bottom:9px}
+.saved-scenario-picker .select-shell select{background:#fffef7;border-color:#cbd8b7;color:#526f3b;font-size:12px;padding:12px 30px 12px 12px}
+.saved-scenario-explanation{border-left:1px solid #dce5ce;padding-left:25px}
+.saved-scenario-explanation h3{font-size:12px;font-weight:600;color:#69824f}
+.saved-scenario-explanation p{font-size:11px;line-height:1.8;color:#7b8d65;margin:5px 0 8px;max-width:680px}
+.saved-scenario-explanation>span{font-size:8px;letter-spacing:.3px;color:#91a472}
+.saved-scenario-help{font-size:10px;color:#8c9b78;line-height:1.8;margin-top:19px;padding-top:14px;border-top:1px solid #e0e7d3}
+.stale-banner>.text-button{margin-left:auto;white-space:nowrap;color:#9c7c3c;font-size:9px}
+@media(max-width:1080px){.saved-scenario-body{grid-template-columns:minmax(200px,260px) minmax(0,1fr);gap:20px}.saved-scenario-explanation{padding-left:20px}}
+@media(max-width:780px){.saved-scenario-heading h2{font-size:18px}.saved-scenario-body{grid-template-columns:1fr;gap:18px}.saved-scenario-explanation{border-left:0;padding-left:0}.saved-scenario-explanation p{font-size:11px}.saved-scenario-heading{margin-bottom:18px}.saved-scenario-help{margin-top:15px}}
+@media(max-width:560px){.saved-scenario-explorer{padding:19px;margin-bottom:17px}.saved-scenario-heading{gap:10px;align-items:flex-start}.saved-scenario-heading h2{font-size:17px}.saved-scenario-heading .eyebrow{font-size:7px}.saved-source-pill{font-size:7px;white-space:normal;max-width:100px;line-height:1.6;padding:6px 7px}.saved-source-pill svg{width:12px}.saved-scenario-picker .select-shell select{font-size:11px}.saved-scenario-help{font-size:9px}.stale-banner{flex-wrap:wrap}.stale-banner>.text-button{font-size:8px}}
+@media print{.saved-scenario-explorer{break-inside:avoid;padding:16px;border:1px solid #d0dbbd;background:#f7faef}.saved-source-pill,.saved-scenario-picker,.saved-scenario-help{display:none}.saved-scenario-body{display:block}.saved-scenario-explanation{border:0;padding:0}.saved-scenario-heading{margin-bottom:10px}}
